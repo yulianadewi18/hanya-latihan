@@ -1,187 +1,592 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<!-- Judul Halaman -->
-	<title>Orbit Future Academy</title>
-	
-	<meta charset="utf-8">
-	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	<!-- Icon -->
-	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-	
-	<!-- CSS -->
-	<link rel="stylesheet" href={{ url_for('static', filename='/css/bootstrap.min.css') }} type="text/css">
-	<link rel="stylesheet" href={{ url_for('static', filename='/css/client_side.css') }}  type="text/css">
-	
-	<!-- JavaScript -->
-	<script src={{ url_for('static', filename='/js/jquery_3.6.0.min.js') }} ></script>
-	<script src={{ url_for('static', filename='/js/bootstrap_3.4.1.min.js') }} ></script>
-</head>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>CV Rera</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="src/style.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
+    <meta
+      name="description"
+      content=""
+    />
+    <meta name="author" content="http://github.com/sergioJrDev/" />
+    <meta name="robots" content="index/follow" />
+    <meta name="googlebot" content="index/follow" />
+    <meta name="theme-color" content="#3481b3" />
+    <meta name="msapplication-navbutton-color" content="#3481b3" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#3481b3" />
+    <meta name="msapplication-TileColor" content="#3481b3" />
 
-<body id="halamanku" data-spy="scroll" data-target=".navbar" data-offset="60">
+    <meta itemprop="name" content="Sérgio Júnior - Desenvolvedor Front-End" />
+    <meta
+      itemprop="description"
+      content="Desenvolvedor web há quase 4 anos, focado no universo Javascript e React."
+    />
+    <meta
+      itemprop="image"
+      content="src/images/profile.jpg"
+    />
 
-	<!-- Navigation Bar -->
-	<nav class="navbar navbar-default navbar-fixed-top">
-		<div class="container">
-			
-			<!-- Logo -->
-			<div class="navbar-header">
-				<img src={{ url_for('static', filename='/images/orbit_logo.jpg') }} alt="Orbit Logo" 
-				width="50" height="50" align="left">
-				<a class="navbar-brand" href="#halamanku">&#160; Orbit Future Academy</a>
-			</div>
-			
-			<!-- Daftar Halaman -->
-			<div class="collapse navbar-collapse" id="myNavbar">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#informasi">INFORMASI</a></li>
-					<li><a href="#aplikasi">APLIKASI</a></li>
-					<li><a href="#anggotaKelompok">ANGGOTA KELOMPOK</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Sérgio Júnior - Desenvolvedor Front-End"
+    />
+    <meta
+      property="og:url"
+      content="https://www.grupodeatitudesocial.com.br/#/"
+    />
+    <meta
+      property="og:site_name"
+      content="Sérgio Júnior - Desenvolvedor Front-End"
+    />
+    <meta
+      property="og:image"
+      content="https://cdn.uconnectlabs.com/wp-content/uploads/sites/5/2017/12/20170301155447.jpg"
+    />
+    <meta
+      property="og:description"
+      content="Desenvolvedor web há quase 4 anos, focado no universo Javascript e React."
+    />
+    <meta property="og:locale" content="pt_BR" />
 
-	<!-- Bagian Halaman (Informasi) -->
-	<div id="informasi" class="container-fluid">
-		<br>
-		<br>
-		<br>
-		<div class="row">
-			<div class="col-sm-6">
-				<!-- Deskripsi Aplikasi -->
-				<h2>ICA</h2>
-				<h4>Iris ClAssifier</h4><br>
-				<p style="text-align: justify;text-justify: inter-word;">
-					Aplikasi ini dibuat untuk menentukan spesies dari bunga iris berdasarkan pengukuran panjang serta lebar 
-					dari <i>sepal</i> dan <i>petal</i> bunga. "Iris Setosa", "Iris Versicolor", dan "Iris Virginica" 
-					adalah ketiga species bunga iris yang dapat diprediksi melalui aplikasi ini.
-					Pengguna hanya cukup memberikan 4 nilai pengukuran untuk dapat mengetahui spesies dari bunga iris tersebut.
-					Keempat nilai pengukuran tersebut adalah panjang <i>petal</i>, lebar <i>petal</i>, panjang <i>sepal</i>,
-					dan lebar <i>sepal</i>.
-				</p>
-				<br>
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="Sérgio Júnior - Desenvolvedor Front-End"
+    />
+    <meta
+      name="twitter:description"
+      content="Desenvolvedor web há quase 4 anos, focado no universo Javascript e React."
+    />
+    <meta name="twitter:creator" content="http://github.com/sergioJrDev/" />
+    <meta
+      name="twitter:image"
+      content="https://cdn.uconnectlabs.com/wp-content/uploads/sites/5/2017/12/20170301155447.jpg"
+    />
 
-				<!-- Tombol Mulai -->
-				<nav id="navgo" class="navbar" style="background-color:#ffffff;z-index: 0;">
-					<ul class="nav nav-pills">
-						<li class="nav-item">
-							<a class="btn btn-default btn-lg" href="#aplikasi" style="background-color:#28ace5">Mulai</a>
-						</li>
-					</ul>
-				</nav>
-			</div>
-			
-			<div class="col-sm-6">
-				<br>
-				<br>
-				<!-- Gambar Deskripsi Aplikasi -->
-				<img src={{ url_for('static', filename='/images/app-display.JPG') }} width="500" ></img>
-			</div>
-		</div>
-		<br>
-	</div>
-	
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="src/images/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="src/images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="src/images/favicon/favicon-16x16.png"
+    />
+  </head>
 
-	<!-- Bagian Halaman (Aplikasi) -->
-	<div id="aplikasi" data-bs-spy="scroll" data-bs-target="#navgo" data-bs-offset="0" class="scrollspy-example" tabindex="0">
-		<br>
-		<br>
-		<div class="row">
-			<div class="col-sm-6">
-				</br>
-				<!-- Input Nilai Pengukuran dari Pengguna -->
-				<h3 style="margin-left: 50px;">Nilai Pengukuran </h3>
-				<form>
-					<div class="form-group" style="margin-left: 50px;">
-						<!-- Input Slider untuk Nilai Pengukuran Bunga Iris -->
-						<label for="range_sepal_length">Sepal Length (cm) </label>&nbsp;&rarr;&nbsp;
-						<span id="rangeVal_sepal_length">5.0<!-- Default value --></span>
-						<input type="range" min="4.3" max="7.9" step="0.05" value="5.0" class="slider" id="range_sepal_length" 
-						onInput="$('#rangeVal_sepal_length').html($(this).val())">
-						</br>
-						<label for="range_sepal_width">Sepal Width (cm) </label>&nbsp;&rarr;&nbsp;
-						<span id="rangeVal_sepal_width">3.0<!-- Default value --></span>
-						<input type="range" min="2.0" max="4.4" step="0.05" value="3.0" class="slider" id="range_sepal_width" 
-						onInput="$('#rangeVal_sepal_width').html($(this).val())">
-						</br>
-						<label for="range_petal_length">Petal Length (cm) </label>&nbsp;&rarr;&nbsp;
-						<span id="rangeVal_petal_length">3.0<!-- Default value --></span>
-						<input type="range" min="1.0" max="6.9" step="0.05" value="3.5" class="slider" id="range_petal_length" 
-						onInput="$('#rangeVal_petal_length').html($(this).val())">
-						</br>
-						<label for="range_petal_width">Petal Width (cm) </label>&nbsp;&rarr;&nbsp;
-						<span id="rangeVal_petal_width">3.0<!-- Default value --></span>
-						<input type="range" min="0.1" max="2.5" step="0.05" value="1.0" class="slider" id="range_petal_width" 
-						onInput="$('#rangeVal_petal_width').html($(this).val())">
-						</br>
-						<!-- Tombol Prediksi -->
-						<button type="submit" id="prediksi_submit" class="btn btn-default btn-lg">Prediksi</button>
-					</div>
-				</form>
-			</div>
-			<div class="col-sm-6">
-				<br>
-				<!-- Bagian Halaman untuk Hasil Prediksi -->
-				<div id="hasil_prediksi" align="center">
-						<!-- Hasil Prediksi akan ditampilkan di sini-->
-				</div>
-			</div>
-		</div>
-		<br>
-		<br>
-	</div>
+  <body class="overflow-hidden">
+    <div class="main-container d-flex d-flex-space-between">
+      <aside class="sidebar vh-100 mobile-menu">
+        <button
+          onClick="toggleMenu()"
+          class="active-menu-btn active-menu-btn-left hide-sm"
+          aria-label="Abrir Fechar menu"
+        >
+          <i class="fs6 fas fa-times"></i>
+        </button>
+        <button
+          onClick="toggleMenu()"
+          class="active-menu-btn active-menu-btn-right hide-sm"
+          aria-label="Abrir Fechar menu"
+        >
+          <i class="fs6 fas fa-bars"></i>
+        </button>
+        <div class="overflow-scroll">
+          <div
+            class="profile-img d-flex d-flex-end d-flex-align-end d-flex-column p-20"
+          >
+            <img src="./src/images/profile.jpg" />
+            <h1
+              class="color-white background-darken-opacity p-left-10 p-right-10 fwbold"
+            >
+              Sérgio Júnior
+            </h1>
+            <h1
+              class="color-white background-darken-opacity p-left-10 p-right-10 fwlighter"
+            >
+              Desenvolvedor Web
+            </h1>
+          </div>
+          <div class="p-20 d-fle border-bottom d-flex d-flex-space-around">
+            <a
+              href="https://codepen.io/sergioamjr/"
+              target="_blank"
+              aria-label="Codepen do Sérgio Júnior"
+            >
+              <i class="fab fa-codepen p-center flex-1 color-white fs4"></i>
+            </a>
+            <a
+              href="https://medium.com/@sergioamjr91"
+              target="_blank"
+              aria-label="Medium do Sérgio Júnior"
+            >
+              <i class="fab fa-medium-m p-center flex-1 color-white fs4"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/ahserginho/"
+              target="_blank"
+              aria-label="Instagram do Sérgio Júnior"
+            >
+              <i class="fab fa-instagram p-center flex-1 color-white fs4"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/sergioamjr/"
+              target="_blank"
+              aria-label="Linkedin do Sérgio Júnior"
+            >
+              <i class="fab fa-linkedin-in p-center flex-1 color-white fs4"></i>
+            </a>
+            <a
+              href="https://github.com/SergioJrDev"
+              target="_blank"
+              aria-label="Guthub do Sérgio Júnior"
+            >
+              <i class="fab fa-github p-center flex-1 color-white fs4"></i>
+            </a>
+          </div>
+          <div class="p-20 p-top-20 p-bottom-20 d-fle border-bottom">
+            <h2 class="color-white p-right m-bottom-10">Resumo</h2>
+            <p class="color-white fs8 fwnormal p-right m-bottom-20">
+              Eu tenho 27 anos, trabalho como desenvolvedor há quase 4 anos e já
+              passei por agências, freelancer e startups e estou sempre a
+              procura por novos desafios e oportunidades para troca de
+              conhecimento e experiências, entregando resultados e interagindo
+              com outras pessoas. Sou apaixonado por criar e trabalhar com a
+              internet, e a possibilidade de atingir inúmeras pessoas.
+            </p>
+            <p class="color-white fs8 fwnormal p-right">
+              Além disso, sendo mais pessoal, eu amo música, gatos, livros, sou
+              adepto do Budismo. Tenho um
+              <a
+                class="color-white"
+                href="http://www.diariodeumcrohnista.com.br/"
+                target="_blank"
+                >blog</a
+              >
+              e
+              <a
+                class="color-white"
+                href="https://anchor.fm/diicast"
+                target="_blank"
+                >podcast</a
+              >
+              sobre Doenças Inflamatórias Intestinais, depois de ser
+              diagnosticado com Doenca de Crohn, e também sou lider do
+              <a
+                class="color-white"
+                href="https://www.grupodeatitudesocial.com.br/#/"
+                target="_blank"
+                >GAS - Grupo de Atitude Social</a
+              >, um coletivo que há cada duas semanas se reune para levar
+              assistência para moradores de rua de São Paulo.
+            </p>
+          </div>
+          <div class="p-20 d-fle border-bottom">
+            <h2 class="color-white p-right m-bottom-10">Contato</h2>
+            <p class="color-white fs7 fwnormal p-right m-bottom-10">
+              (11) 94927-4392
+            </p>
+            <p class="color-white fs7 fwnormal p-right">
+              Sergioamjr91@gmail.com
+            </p>
+          </div>
+          <div class="p-20 d-fle border-bottom">
+            <h2 class="color-white p-right m-bottom-10">Habilidades</h2>
+            <ul class="d-flex d-flex-wrap d-flex-end">
+              <li
+                class="color-white fs8 br-5 bordered p-5 m-bottom-5 d-inline-block m-left-5"
+              >
+                HTML5
+              </li>
+              <li
+                class="color-white fs8 br-5 bordered p-5 m-bottom-5 d-inline-block m-left-5"
+              >
+                CSS3
+              </li>
+              <li
+                class="color-white fs8 br-5 bordered p-5 m-bottom-5 d-inline-block m-left-5"
+              >
+                JavaScript (ES6^)
+              </li>
+              <li
+                class="color-white fs8 br-5 bordered p-5 m-bottom-5 d-inline-block m-left-5"
+              >
+                React
+              </li>
+              <li
+                class="color-white fs8 br-5 bordered p-5 m-bottom-5 d-inline-block m-left-5"
+              >
+                React Native
+              </li>
+              <li
+                class="color-white fs8 br-5 bordered p-5 m-bottom-5 d-inline-block m-left-5"
+              >
+                AngularJS
+              </li>
+              <li
+                class="color-white fs8 br-5 bordered p-5 m-bottom-5 d-inline-block m-left-5"
+              >
+                WordPress
+              </li>
+              <li
+                class="color-white fs8 br-5 bordered p-5 m-bottom-5 d-inline-block m-left-5"
+              >
+                PHP
+              </li>
+              <li
+                class="color-white fs8 br-5 bordered p-5 m-bottom-5 d-inline-block m-left-5"
+              >
+                SASS
+              </li>
+              <li
+                class="color-white fs8 br-5 bordered p-5 m-bottom-5 d-inline-block m-left-5"
+              >
+                Stylus
+              </li>
+              <li
+                class="color-white fs8 br-5 bordered p-5 m-bottom-5 d-inline-block m-left-5"
+              >
+                CSS-in-JS
+              </li>
+              <li
+                class="color-white fs8 br-5 bordered p-5 m-bottom-5 d-inline-block m-left-5"
+              >
+                Webpack
+              </li>
+              <li
+                class="color-white fs8 br-5 bordered p-5 m-bottom-5 d-inline-block m-left-5"
+              >
+                Gulp
+              </li>
+              <li
+                class="color-white fs8 br-5 bordered p-5 m-bottom-5 d-inline-block m-left-5"
+              >
+                Redux
+              </li>
+              <li
+                class="color-white fs8 br-5 bordered p-5 m-bottom-5 d-inline-block m-left-5"
+              >
+                State Machine
+              </li>
+              <li
+                class="color-white fs8 br-5 bordered p-5 m-bottom-5 d-inline-block m-left-5"
+              >
+                MongoDB
+              </li>
+              <li
+                class="color-white fs8 br-5 bordered p-5 m-bottom-5 d-inline-block m-left-5"
+              >
+                MySQL
+              </li>
+              <li
+                class="color-white fs8 br-5 bordered p-5 m-bottom-5 d-inline-block m-left-5"
+              >
+                Node
+              </li>
+              <li
+                class="color-white fs8 br-5 bordered p-5 m-bottom-5 d-inline-block m-left-5"
+              >
+                Express
+              </li>
+              <li
+                class="color-white fs8 br-5 bordered p-5 m-bottom-5 d-inline-block m-left-5"
+              >
+                API Rest
+              </li>
+              <li
+                class="color-white fs8 br-5 bordered p-5 m-bottom-5 d-inline-block m-left-5"
+              >
+                Git
+              </li>
+              <li
+                class="color-white fs8 br-5 bordered p-5 m-bottom-5 d-inline-block m-left-5"
+              >
+                CI
+              </li>
+              <li
+                class="color-white fs8 br-5 bordered p-5 m-bottom-5 d-inline-block m-left-5"
+              >
+                Kanban
+              </li>
+              <li
+                class="color-white fs8 br-5 bordered p-5 m-bottom-5 d-inline-block m-left-5"
+              >
+                TDD
+              </li>
+              <li
+                class="color-white fs8 br-5 bordered p-5 m-bottom-5 d-inline-block m-left-5"
+              >
+                UX/UI
+              </li>
+              <li
+                class="color-white fs8 br-5 bordered p-5 m-bottom-5 d-inline-block m-left-5"
+              >
+                Usabilidade
+              </li>
+              <li
+                class="color-white fs8 br-5 bordered p-5 m-bottom-5 d-inline-block m-left-5"
+              >
+                Semântica
+              </li>
+              <li
+                class="color-white fs8 br-5 bordered p-5 m-bottom-5 d-inline-block m-left-5"
+              >
+                SEO
+              </li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+      <section class="content overflow-hidden vh-100 flex-1 full-width-sm">
+        <div class="container overflow-scroll">
+          <div class="m-top-20 m-bottom-20">
+            <div class="background-white p-20 d-flex">
+              <div class="d-none show-sm">
+                <i
+                  class="fas color-gray fs5 fa-building p-top-10 p-right-15"
+                ></i>
+              </div>
+              <div>
+                <h2 class="m-bottom-20 color-darken fs4">
+                  Experiência profissional
+                </h2>
+                <div class="border-bottom p-bottom-20 m-bottom-20">
+                  <h3 class="color-darken m-bottom-5 fs7">
+                    Desenvolvedor Front-End
+                  </h3>
+                  <a
+                    href="https://www.lapag.com.br/"
+                    target="_blank"
+                    class="color-theme color-darken m-bottom-5 d-block fs8"
+                    >LaPag</a
+                  >
+                  <p class="color-gray m-bottom-5">Ago/2018 - Nov/2018</p>
+                  <p>
+                    Desenvolvimento de novas funcionalidades e manutenção da
+                    plataforma, com as stacks React e seu eco-sistema, Mongo e
+                    Meteor. Além de contribuir com a cultura de desenvolvimento
+                    através de code review, reorganização da estrutura de
+                    pastas, métricas no codebase (bundle e test coverage),
+                    remoção de código legado, testes de usabilidade e UX,
+                    criação de Style Guide.
+                  </p>
+                </div>
+                <div class="border-bottom p-bottom-20 m-bottom-20">
+                  <h3 class="color-darken m-bottom-5 fs7">
+                    Desenvolvedor Front-End
+                  </h3>
+                  <a
+                    href="https://pismo.io/"
+                    target="blank"
+                    class="color-theme color-darken m-bottom-5 d-block fs8"
+                    >Pismo</a
+                  >
+                  <p class="color-gray m-bottom-5">Jul/2017 - Ago/2018</p>
+                  <p>
+                    Manutenção e lançamentos de novas features na plataforma
+                    legada em AngularJs. Migração e criação de novas aplicações
+                    em React e auxílio na criação de um aplicativo em React
+                    Native. Tecnologias: HTML, CSS, Javascript (ES6^), State
+                    Management, Protocolo HTTP, Pré Processadores, CSS in JS,
+                    Deploy, Versionamento, Kanban.
+                  </p>
+                </div>
+                <div class="">
+                  <h3 class="color-darken m-bottom-5 fs7">
+                    Desenvolvedor Front-End
+                  </h3>
+                  <a
+                    href="http://wejam.click/"
+                    target="_blank"
+                    class="color-theme color-darken m-bottom-5 d-block fs8"
+                    >WeJam</a
+                  >
+                  <p class="color-gray m-bottom-5">Out/2015 - Abr/2017</p>
+                  <p>
+                    Atuava na criação e manutenção de temas e plugins do
+                    WordPress, com PHP, Banco de Dados e Ajax, Interação com
+                    API’s externas, Criação de Single Page Application com
+                    AngularJS, Markup PSD para HTML, CSS, JS, E-mail Marketing,
+                    testes cross browsers, metodologias ágeis (Kanban), Pré
+                    processadores CSS, automatizador de tarefa (Gulp),
+                    performance, acessibilidade, semântica, SEO, versionamento
+                    com Git/Bitbucket.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="background-white p-20 m-top-20 d-flex">
+              <div class="d-none show-sm">
+                <i
+                  class="fas fa-graduation-cap color-gray fs5 p-top-10 p-right-15"
+                ></i>
+              </div>
+              <div>
+                <h2 class="m-bottom-10 color-darken fs4">
+                  Formação acadêmica e cursos complementares
+                </h2>
+                <div class="border-bottom p-bottom-20 m-bottom-20">
+                  <h2 class="color-darken m-bottom-5 fs7">
+                    Gestão em Tecnologia da Informação
+                  </h2>
+                  <h3 class="color-theme color-darken m-bottom-5 d-block fs8">
+                    Faculdade Sumaré
+                  </h3>
+                  <p class="color-gray m-bottom-5">Fev/2013 - Jun/2015</p>
+                </div>
+                <div class="border-bottom p-bottom-20 m-bottom-20">
+                  <h2 class="color-darken m-bottom-5 fs7">
+                    Curso de Desenvolvimento Front-End
+                  </h2>
+                  <h3 class="color-theme color-darken m-bottom-5 d-block fs8">
+                    Caelum – Ensino e Inovação.
+                  </h3>
+                  <p class="color-gray m-bottom-5">Jan/2015 - 40 horas/aula</p>
+                  <p class="color-darken">
+                    Desenvolvimento Front-End, com boas práticas em HTML5, CSS3,
+                    JavaScript, Bibliotecas jQuery, Técnicas de SEO, semântica,
+                    Design Responsivo e Mobile, Twitter Bootstrap, noções de
+                    Banco de Dados SQL e PHP para Back-End.
+                  </p>
+                </div>
+                <div class="">
+                  <h2 class="color-darken m-bottom-5 fs7">
+                    Curso de Informática Para Internet
+                  </h2>
+                  <h3 class="color-theme color-darken m-bottom-5 d-block fs8">
+                    ETEC de Poá - Centro Paula Souza
+                  </h3>
+                  <p class="color-gray m-bottom-5">Fev/2010 - Jun/2011</p>
+                  <p class="color-darken">
+                    Conhecimento e introdução em lógica de programação, Web
+                    Design, Design Gráfico, Banco de Dados, Redes.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="background-white p-20 p-bottom-0 m-top-20 d-flex">
+              <div class="d-none show-sm">
+                <i class="fab fa-osi color-gray fs5 p-top-10 p-right-15"></i>
+              </div>
+              <div>
+                <h2 class="m-bottom-10 color-darken fs4">
+                  Iniciativas Open Sources
+                </h2>
 
-	<!-- Bagian Halaman (Anggota Kelompok) -->
-	<div id="anggotaKelompok" class="container-fluid text-center">
-		<br>
-		<h2>ANGGOTA KELOMPOK</h2>
-		<h4>Tim Deployment dan Tim DS</h4>
-		<br>
-		<div class="row slideanim">
-			<div class="col-sm-4">
-				<span class="glyphicon glyphicon-user logo-small"></span>
-				<h4>BUDI</h4>
-				<p>Universitas Sumatera</p>
-			</div>
-			<div class="col-sm-4">
-				<span class="glyphicon glyphicon-user logo-small"></span>
-				<h4>AYU</h4>
-				<p>Universitas Jawa dan Bali</p>
-			</div>
-			<div class="col-sm-4">
-				<span class="glyphicon glyphicon-user logo-small"></span>
-				<h4>TONO</h4>
-				<p>Universitas Kalimantan</p>
-			</div>
-		</div>
-	    <br>
-	    <div class="row slideanim">
-			<div class="col-sm-6">
-				<span class="glyphicon glyphicon-user logo-small"></span>
-				<h4>PUTRA</h4>
-				<p>Universitas Sulawesi</p>
-			</div>
-			<div class="col-sm-6">
-				<span class="glyphicon glyphicon-user logo-small"></span>
-				<h4>PUTRI</h4>
-				<p>Universitas Kepulauan Nusa, Maluku dan Papua</p>
-			</div>
-	    </div>
-	</div>
-
-	<!-- Footer -->
-	<footer class="container-fluid text-center">
-		<a href="#halamanku" title="To Top">
-			<span class="glyphicon glyphicon-chevron-up"></span>
-		</a>
-		<p>Orbit Future Academy <br> <a href="https://orbitfutureacademy.id/">orbitfutureacademy.id</a></p>
-	</footer>
-
-	<!-- JavaScript untuk Animasi Scroll dan Prediksi Model -->
-	<script  src={{ url_for('static', filename='/js/client_side.js') }}></script>
-
-</body>
+                <div class="grid">
+                  <div class="sm-6-12">
+                    <div class="border-bottom p-bottom-20 m-bottom-20">
+                      <h3 class="color-darken m-bottom-5 fs7">
+                        Redux Config CLI
+                      </h3>
+                      <a
+                        target="_blank"
+                        href="https://github.com/SergioJrDev/redux-ducks-cli"
+                        class="color-theme m-bottom-5 d-block"
+                        >Repositório no Github</a
+                      >
+                      <p class="color-darken">
+                        CLI para criar a configuração, store, reducers e actions
+                        no Redux.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="sm-6-12">
+                    <div class="border-bottom p-bottom-20 m-bottom-20">
+                      <h3 class="color-darken m-bottom-5 fs7">
+                        Gerador de Schema JSON-LD
+                      </h3>
+                      <a
+                        target="_blank"
+                        href="https://sergiojrdev.github.io/Schema-JsonLd-Generetor/"
+                        class="color-theme m-bottom-5 d-block"
+                        >Link do gerador</a
+                      >
+                      <p class="color-darken">
+                        Gerador automático do Schema JsonLD para melhor
+                        entendimento e indexação de um site.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="sm-6-12">
+                    <div
+                      class="border-bottom-sm no-p-bottom p-bottom-20 m-bottom-20"
+                    >
+                      <h3 class="color-darken m-bottom-5 fs7">
+                        Boas práticas de CSS
+                      </h3>
+                      <a
+                        target="_blank"
+                        href="https://css-good-practices.netlify.com/#/apresentacao"
+                        class="color-theme m-bottom-5 d-blok"
+                        >Link da apresentação</a
+                      >
+                      <p class="color-darken">
+                        Conteúdo que apresentei p/ alguns colegas de trabalho.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="sm-6-12">
+                    <div class="m-bottom-20">
+                      <h3 class="color-darken m-bottom-5 fs7">
+                        Awesome CV Template
+                      </h3>
+                      <a
+                        target="_blank"
+                        href="https://github.com/SergioJrDev/awesome-cv-template"
+                        class="color-theme m-bottom-5 d-blok"
+                        >Link do repositório</a
+                      >
+                      <p class="color-darken">
+                        Repositório desse meu modelo de CV para ser baixado e
+                        reutilizado.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="background-white p-20 m-top-20">
+              <p class="color-darken">
+                2023
+                <a
+                  class="color-theme"
+                  target="_blank"
+                  href="https://github.com/reraparius"
+                  >cv</a
+                >. 
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700"
+      rel="stylesheet"
+    />
+    <script src="src/script.js"></script>
+  </body>
 </html>
